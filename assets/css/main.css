@@ -1,0 +1,4 @@
+.counter .counter-count, .counter h4 { text-align: center!important;}
+.counter .counter-count { margin-bottom: 5px!important; }
+.counter { text-align: center!important; }
+.counter i { display: block; margin-bottom: 10px; }
