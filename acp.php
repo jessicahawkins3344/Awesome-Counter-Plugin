@@ -12,14 +12,30 @@
  */
 
 
+define('ACP_URL', plugin_dir_url( __FILE__ ));
+define('ACP_DIR', plugin_dir_path(__FILE__));
+
+require ACP_DIR . '/class.settings-api.php';
+
+require ACP_DIR . '/acp-options.php'; //
+
+new ACP_Settings_API_Test();
+
 /* Enqueue styles */
 add_action( 'wp_enqueue_scripts', 'add_rpt_scripts', 99 );
+add_action( 'wp_enqueue_scripts', 'add_counter_styles', 99 );
+
+
 
 function add_rpt_scripts() {
 	wp_enqueue_script( 'acp-main', plugins_url('assets/js/acp-main.js', __FILE__), ('jquery'));
 	wp_enqueue_script( 'countimator', 'https://cdn.rawgit.com/benignware/jquery-countimator/master/dist/js/jquery.countimator.min.js', ('jquery'));
 	wp_enqueue_script( 'handlebars', 'https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.3/handlebars.min.js', ('jquery'));
 	wp_enqueue_style( 'acp',  plugins_url('assets/css/main.css', __FILE__));
+}
+
+function add_counter_styles() {
+	wp_enqueue_style( 'counter-css',  plugins_url('counter.php', __FILE__));
 }
 
 function register_button( $buttons ) {
@@ -55,10 +71,10 @@ function counterShortcode( $atts, $content = null ) {
 		array(
 			'title' => 'Description',
 			'value' => '20',
-			'value_size' => '40px',
-			'title_size' => '22px',
-			'value_color' => 'inherit',
-			'title_color' => 'inherit',
+			'value_size' => 'auto',
+			'title_size' => 'auto',
+			'value_color' => '',
+			'title_color' => '',
 			'class' => '',
 			'duration' => '3400',
 			'format' => '',
@@ -69,7 +85,13 @@ function counterShortcode( $atts, $content = null ) {
 		'counter'
 	);
   
-  	return '<div class="counter count-number ' . $atts['class'] . '" data-duration="' . $atts['duration'] . '" data-value="' . $atts['value'] .'">' . '<i class="fa ' . $atts['icon'] . '" style="line-height:' . $atts['icon_size'] .'; font-size:' . $atts['icon_size'] .';"></i>' . '<span class="counter-count" style=" display: inline-block; color:' . $atts['value_color'] .'; line-height:' . $atts['value_size'] .'; font-size:' . $atts['value_size'] .';">' . $atts['value'] . '</span>' . '<span>' . $atts['format'] . '</span>' . '<h4>' . $atts['title'] . '</h4>' . '</div>';
+  	$awesome_counter_options = get_option( 'acp_defaults' ); // Array of All Options
+$color_title = $awesome_counter_options['color-title']; // Default Title Size
+$value_color = $awesome_counter_options['value-color']; // Default Value Size
+$value_size = $awesome_counter_options['value-size']; // Default Title Color
+$icon_name = $awesome_counter_options['icon-name']; // Default Title Color
+
+  	return '<div class="counter count-number ' . $atts['class'] . '" data-duration="' . $atts['duration'] . '" data-value="' . $atts['value'] .'">' . '<i class="fa ' . $icon_name . ' ' . $atts['icon'] . '" style="line-height:' . $atts['icon_size'] .'; font-size:' . $atts['icon_size'] .';"></i>' . '<span class="counter-count" style=" display: inline-block; color:' . $value_color .'; color:' . $atts['value_color'] .'; line-height:' . $value_size . '; line-height:' . $atts['value_size'] .'; font-size:' . $value_size . '; font-size:' . $atts['value_size'] .';">' . $atts['value'] . '</span>' . '<span>' . $atts['format'] . '</span>' . '<h4 class="count-heading" style="color:' . $color_title . '; color: ' . $atts['title_color'] . '; font-size:' . $title_size . '; font-size: ' . $atts['title_size'] . '; line-height:' . $title_size . '; line-height: ' . $atts['title_size'] . ';">' . $atts['title'] . '</h4>' . '</div>';
 
 }
 add_shortcode( 'counter', 'counterShortcode' );
