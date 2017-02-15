@@ -24,10 +24,10 @@ function acp_styles_method() {
 		$custom_css .= "span.count-heading { font-size: {$title_size}px; line-height: {$title_size}px; }";
 
 		$value_color = my_get_option( 'value-color', 'acp_defaults', '' );
-		$custom_css .= "span.counter-count { color: {$title_color}; }";
+		$custom_css .= "h3.counter.count-number { color: {$title_color}; }";
 
 		$value_size = my_get_option( 'value-size', 'acp_defaults', '' );
-		$custom_css .= "span.counter-count { font-size: {$value_size}px; line-height: {$value_size}px; }";
+		$custom_css .= "h3.counter.count-number { font-size: {$value_size}px; line-height: {$value_size}px; }";
 
 		$value_size = my_get_option( 'value-size', 'acp_defaults', '' );
 		$form_size = $value_size / 2.75;

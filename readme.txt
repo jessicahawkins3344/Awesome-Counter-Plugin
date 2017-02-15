@@ -12,14 +12,16 @@ Animated Number Countimator - Count Up - Create individual jquery counter using 
 == Description ==
 Awesome Animated Number Counter Plugin to Count Up - Create individual jquery counter using shortcodes. Utilizes the jquery countimator plugin  to create countimator count up blocks to showcase different stats, features, or numbers on your site.
 
-This plugin is used by a quick an easy shortcode that allows you to fully customize the styles for the value, title, and icon per shortcode -- or set your default styles globally in the options menu. Demo here: http://jsquaredcreative.com/awesome-counter-plugin/
+This plugin is used by a quick an easy shortcode that allows you to fully customize the styles for the value, title, and icon per shortcode -- or set your default styles globally in the options menu.
 
 == Installation ==
 1. Download and Install
 2. Activate the Awesome Counter Plugin.
-3. Set default styles in the "ACP Settings" option page.
-4. Insert a counter by using the [counter title="Title" value="2400"] shortcode
+3. Set default styles in the \"ACP Settings\" option page.
+4. Insert a counter by using the [counter title=\"Title\" value=\"2400\"] shortcode
 5. Use shortcode attributes to change the default options and styling for that counter only.
+
+
 
 == Frequently Asked Questions ==
 1. What attributes can I use in the shortcode?
@@ -42,9 +44,9 @@ duration - duration of counting, default 3400
 
 **** Example:
 
-[counter title="Projects" value="365" title_size="32px" title_color="#323232" value_size="65px" format="%" value_color="aqua" icon="fa-diamond" icon_size="28px" class="col-md-4"]
-[counter title="Clients" value="163" title_size="32px" title_color="#323232" value_size="65px" format="%" value_color="aqua" icon="fa-diamond" icon_size="28px" class="col-md-4"]
-[counter title="Cups of Coffee" value="3857" title_size="32px" title_color="#323232" value_size="65px" value_color="aqua" icon="fa-diamond" icon_size="28px" class="col-md-4"]
+[counter title=\"Projects\" value=\"365\" title_size=\"32px\" title_color=\"#323232\" value_size=\"65px\" format=\"%\" value_color=\"aqua\" icon=\"fa-diamond\" icon_size=\"28px\" class=\"col-md-4\"]
+[counter title=\"Clients\" value=\"163\" title_size=\"32px\" title_color=\"#323232\" value_size=\"65px\" format=\"%\" value_color=\"aqua\" icon=\"fa-diamond\" icon_size=\"28px\" class=\"col-md-4\"]
+[counter title=\"Cups of Coffee\" value=\"3857\" title_size=\"32px\" title_color=\"#323232\" value_size=\"65px\" value_color=\"aqua\" icon=\"fa-diamond\" icon_size=\"28px\" class=\"col-md-4\"]
 
 This would create 3 different counters, in a 3 column responsive, bootstrap grid layout.
 

@@ -44,7 +44,7 @@ if ( !class_exists('ACP_Settings_API_ACP' ) ):
     function get_settings_fields() {
         $settings_fields = array(
             'acp_defaults' => array(
-            	array(
+                array(
                     'name'        => 'html',
                     'desc'        => __( 'Default Styles for Counters - can be changed via shortcode.', 'acp' ),
                     'type'        => 'html'
@@ -55,8 +55,7 @@ if ( !class_exists('ACP_Settings_API_ACP' ) ):
                     'desc'              => __( 'Title Size', 'acp' ),
                     'placeholder'       => __( 'Title Size in px', 'acp' ),
                     'type'              => 'text',
-                    'default'           => 'px',
-                    'sanitize_callback' => 'sanitize_text_field'
+                    'default'           => 'px'
                 ),
                 array(
                     'name'    => 'color-title',
@@ -72,8 +71,7 @@ if ( !class_exists('ACP_Settings_API_ACP' ) ):
                     'desc'              => __( 'Value Size in px', 'acp' ),
                     'placeholder'       => __( '20', 'acp' ),
                     'type'              => 'text',
-                    'default'           => '30px',
-                    'sanitize_callback' => 'sanitize_text_field'
+                    'default'           => '30px'
                 ),
                 array(
                     'name'    => 'value-color',
@@ -88,8 +86,7 @@ if ( !class_exists('ACP_Settings_API_ACP' ) ):
                     'desc'              => __( 'Format - %, $, /mo, yearly, etc. Leave blank for no format default', 'acp' ),
                     'placeholder'       => __( '%', 'acp' ),
                     'type'              => 'text',
-                    'default'           => '',
-                    'sanitize_callback' => 'sanitize_text_field'
+                    'default'           => ''
                 ),
                 array(
                     'name'              => 'icon-size',
@@ -97,8 +94,7 @@ if ( !class_exists('ACP_Settings_API_ACP' ) ):
                     'desc'              => __( 'Icon Size in px', 'acp' ),
                     'placeholder'       => __( '60px', 'acp' ),
                     'type'              => 'text',
-                    'default'           => '60px',
-                    'sanitize_callback' => 'sanitize_text_field'
+                    'default'           => '60px'
                 ),
                 array(
                     'name'    => 'icon-color',
@@ -113,8 +109,7 @@ if ( !class_exists('ACP_Settings_API_ACP' ) ):
                     'desc'              => __( 'Custom Class', 'acp' ),
                     'placeholder'       => __( 'example-class', 'acp' ),
                     'type'              => 'text',
-                    'default'           => '',
-                    'sanitize_callback' => 'sanitize_text_field'
+                    'default'           => ''
                 ),
                 array(
                     'name'              => 'custom-css',
@@ -122,8 +117,7 @@ if ( !class_exists('ACP_Settings_API_ACP' ) ):
                     'desc'              => __( 'Custom CSS', 'acp' ),
                     'placeholder'       => __( 'custom css here', 'acp' ),
                     'type'              => 'textarea',
-                    'default'           => '',
-                    'sanitize_callback' => 'sanitize_textarea'
+                    'default'           => ''
                 ),
             ),
         );

@@ -1,7 +1,8 @@
 /* Main CSS Styles */
-.counter .counter-count { margin-bottom: 5px!important; display: inline-block; }
+.count-wrapper { text-align: center; }
+h3.counter.count-number { margin-bottom: 5px!important;}
 .counter { text-align: center!important; font-family: inherit; }
-.counter i { display: block; margin-bottom: 10px; }
+.counter i, i.counter-icon { display: block; margin-bottom: 10px; }
 
-span.count-heading { display: block; font-family: inherit;}
+span.count-heading { display: block!important; font-family: inherit;}
 span.format { vertical-align: top;}
