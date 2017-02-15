@@ -12,7 +12,7 @@ Animated Number Countimator - Count Up - Create individual jquery counter using 
 == Description ==
 Awesome Animated Number Counter Plugin to Count Up - Create individual jquery counter using shortcodes. Utilizes the jquery countimator plugin  to create countimator count up blocks to showcase different stats, features, or numbers on your site.
 
-This plugin is used by a quick an easy shortcode that allows you to fully customize the styles for the value, title, and icon per shortcode -- or set your default styles globally in the options menu.
+This plugin is used by a quick an easy shortcode that allows you to fully customize the styles for the value, title, and icon per shortcode -- or set your default styles globally in the options menu. Demo here: http://jsquaredcreative.com/awesome-counter-plugin/
 
 == Installation ==
 1. Download and Install
@@ -20,8 +20,6 @@ This plugin is used by a quick an easy shortcode that allows you to fully custom
 3. Set default styles in the "ACP Settings" option page.
 4. Insert a counter by using the [counter title="Title" value="2400"] shortcode
 5. Use shortcode attributes to change the default options and styling for that counter only.
-
-
 
 == Frequently Asked Questions ==
 1. What attributes can I use in the shortcode?
