@@ -17,8 +17,8 @@ This plugin is used by a quick an easy shortcode that allows you to fully custom
 == Installation ==
 1. Download and Install
 2. Activate the Awesome Counter Plugin.
-3. Set default styles in the \"ACP Settings\" option page.
-4. Insert a counter by using the [counter title=\"Title\" value=\"2400\"] shortcode
+3. Set default styles in the "ACP Settings" option page.
+4. Insert a counter by using the [counter title="Title" value="2400"] shortcode
 5. Use shortcode attributes to change the default options and styling for that counter only.
 
 
@@ -44,9 +44,9 @@ duration - duration of counting, default 3400
 
 **** Example:
 
-[counter title=\"Projects\" value=\"365\" title_size=\"32px\" title_color=\"#323232\" value_size=\"65px\" format=\"%\" value_color=\"aqua\" icon=\"fa-diamond\" icon_size=\"28px\" class=\"col-md-4\"]
-[counter title=\"Clients\" value=\"163\" title_size=\"32px\" title_color=\"#323232\" value_size=\"65px\" format=\"%\" value_color=\"aqua\" icon=\"fa-diamond\" icon_size=\"28px\" class=\"col-md-4\"]
-[counter title=\"Cups of Coffee\" value=\"3857\" title_size=\"32px\" title_color=\"#323232\" value_size=\"65px\" value_color=\"aqua\" icon=\"fa-diamond\" icon_size=\"28px\" class=\"col-md-4\"]
+[counter title="Projects" value="365" title_size="32px" title_color="#323232" value_size="65px" format="%" value_color="aqua" icon="fa-diamond" icon_size="28px" class="col-md-4"]
+[counter title="Clients" value="163" title_size="32px" title_color="#323232" value_size="65px" format="%" value_color="aqua" icon="fa-diamond" icon_size="28px" class="col-md-4"]
+[counter title="Cups of Coffee" value="3857" title_size="32px" title_color="#323232" value_size="65px" value_color="aqua" icon="fa-diamond" icon_size="28px" class="col-md-4"]
 
 This would create 3 different counters, in a 3 column responsive, bootstrap grid layout.
 
