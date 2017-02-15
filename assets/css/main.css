@@ -1,4 +1,7 @@
-.counter .counter-count, .counter h4 { text-align: center!important;}
-.counter .counter-count { margin-bottom: 5px!important; }
-.counter { text-align: center!important; }
+/* Main CSS Styles */
+.counter .counter-count { margin-bottom: 5px!important; display: inline-block; }
+.counter { text-align: center!important; font-family: inherit; }
 .counter i { display: block; margin-bottom: 10px; }
+
+span.count-heading { display: block; font-family: inherit;}
+span.format { vertical-align: top;}
