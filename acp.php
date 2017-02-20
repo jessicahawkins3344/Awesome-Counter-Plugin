@@ -2,11 +2,11 @@
 
 /**
  * Plugin Name: WP Awesome Countimator
- * Plugin URI: http://jsquaredcreative.me
+ * Plugin URI: http://jsquaredcreative.com
  * Description: Animated Number Countimator Plugin - Create individual jquery counter using shortcodes.
  * Version: 1.0.0
  * Author: Jessica Hawkins
- * Author URI: http://jsquaredcreative.me
+ * Author URI: http://jsquaredcreative.com
  * Text Domain: acp
  * License: GPLv2
  */
@@ -22,8 +22,6 @@ require ACP_DIR . '/acp-options.php'; //
 new ACP_Settings_API_ACP();
 
 /* Enqueue styles */
-add_action( 'wp_enqueue_scripts', 'check_font_awesome');
-add_action( 'wp_enqueue_scripts', 'check_bootstrap');
 add_action( 'wp_enqueue_scripts', 'add_acp_scripts', 99 );
 
 /**
@@ -41,20 +39,25 @@ add_action('wp_enqueue_scripts', 'check_font_awesome', 99999);
 function check_font_awesome() {
   global $wp_styles;
   $srcs = array_map('basename', (array) wp_list_pluck($wp_styles->registered, 'src') );
-  if ( in_array('font-awesome.css', $srcs) || in_array('font-awesome.min.css', $srcs) || in_array('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', $srcs  ) ) {
+  if ( in_array('font-awesome.css', $srcs) || in_array('font-awesome.min.css', $srcs)  ) {
+    /* echo 'font-awesome.css registered'; */
   } else {
     wp_enqueue_style('font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' );
   }
 }
 
+add_action('wp_enqueue_scripts', 'check_bootstrap', 99999);
+
 function check_bootstrap() {
   global $wp_styles;
   $srcs = array_map('basename', (array) wp_list_pluck($wp_styles->registered, 'src') );
-  if ( in_array('bootstrap.css', $srcs) || in_array('bootstrap.min.css', $srcs) || in_array('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', $srcs  ) || in_array('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', $srcs ) ){
+  if ( in_array('bootstrap.css', $srcs) || in_array('bootstrap.min.css', $srcs)  ) {
+    /* echo 'font-awesome.css registered'; */
   } else {
-    wp_enqueue_style('font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' );
+    wp_enqueue_style('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' );
   }
 }
+
 
 /**
  * Inline Styles
@@ -132,7 +135,7 @@ function counterShortcode( $atts, $content = null ) {
     );
   
     $awesome_counter_options = get_option( 'acp_defaults' ); // Array of All Options
-    $custom_class = $awesome_counter_options['custom-class']; // Default Title Color
+    $custom_class = my_get_option( 'custom-class', 'acp_defaults', '' ); // Default Title Color
 
     return '<div class="count-wrapper ' . $custom_class . ' ' . $atts['class'] . '">' . '<i class="counter-icon fa ' . $atts['icon'] . '" style="line-height:' . $atts['icon_size'] .'; font-size:' . $atts['icon_size'] .'; color:' . $atts['icon_color'] .';""></i>' . '<h3 class="counter count-number" style=" display: inline-block; color:' . $atts['value_color'] .'; line-height:' . $atts['value_size'] .'; font-size:' . $atts['value_size'] .';">' . $atts['value'] . '</h3>' . '<span class="format" style="line-height:' . $atts['value_size'] .'">' . $atts['format'] . '</span>' . '<span class="count-heading" style="color: ' . $atts['title_color'] . '; font-size:' . $atts['title_size'] . '; line-height: ' . $atts['title_size'] . ';">' . $atts['title'] . '</span>' . '</div>';
 
