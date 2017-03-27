@@ -516,6 +516,30 @@ class ACP_Settings_API {
                     </form>
                 </div>
             <?php } ?>
+            <h4>Shortcode Required Attributes:</4>
+            <h5>These attributes are requried by the counter shortcode:</h5>
+            <ul>
+                <li>title - the title of your counter</li>
+                <li>value - the number value of your counter</li>
+            </ul>
+            <hr>
+            <h4>Shortcode Optional Attributes:</4>
+            <h5>Setting these attributes will overide default settings for this single shortcode instance"</h5>
+            <ul>
+                <li>value_size –&nbsp;size in px</li>
+                <li>value_color – color name or hex code</li>
+                <li>format – format of value, i.e. % or $ or monthly or /hr etc.</li>
+                <li>title_size</li>
+                <li>title_color</li>
+                <li>icon – name of font-awesome icon, i.e. fa-envelope</li>
+                <li>icon_size</li>
+                <li>icon_color</li>
+                <li>class – Custom class, use bootstrap classes to create columns, i.e. – col-md-3</li>
+                <li>duration – duration of counting, default 3400</li>
+            </ul>
+            <hr>
+            <h4>Example Usage:</h4>
+            <p class="metabox-p"><code>[counter title="Projects" value="365" title_size="32px" title_color="#323232" value_size="65px" format="%" value_color="aqua" icon="fa-diamond" icon_size="28px" class="col-md-4"]</code></p>
         </div>
         <?php
         $this->script();
